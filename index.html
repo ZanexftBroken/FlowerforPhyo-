@@ -1,1 +1,272 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dearest Phyo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        h1 {
+            color: #e91e63;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .message {
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            color: white;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            box-shadow: 0 8px 25px rgba(231, 76, 132, 0.4);
+            position: relative;
+            z-index: 2;
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .message:hover {
+            transform: translateY(-10px);
+        }
+        
+        .rose-container {
+            position: relative;
+            height: 300px;
+            margin: 40px 0;
+        }
+        
+        .rose {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+            color: #e91e63;
+            font-size: 10rem;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+            z-index: 1;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .petals {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .petal {
+            position: absolute;
+            background: linear-gradient(to bottom right, #ffafbd, #ffc3a0);
+            border-radius: 50% 0 50% 50%;
+            opacity: 0.8;
+            filter: blur(1px);
+            transform: rotate(45deg);
+            animation: fall linear infinite;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            color: #e91e63;
+            animation: heartbeat 1.2s infinite;
+            z-index: 3;
+        }
+        
+        .signature {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.2rem;
+            color: #e91e63;
+            margin-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .bubbles {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: bubble 15s infinite ease-in;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(0deg) translateY(0);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(5deg) translateY(-20px);
+            }
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.15); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.15); }
+            70% { transform: scale(1); }
+        }
+        
+        @keyframes fall {
+            to {
+                top: 100%;
+                opacity: 0;
+                transform: rotate(0deg) translateX(100px);
+            }
+        }
+        
+        @keyframes bubble {
+            0% {
+                bottom: -100px;
+                transform: translateX(0) scale(0.5);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateX(100px) scale(1);
+                opacity: 0.5;
+            }
+            100% {
+                bottom: 100%;
+                transform: translateX(0) scale(1.2);
+                opacity: 0;
+            }
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #7e57c2;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .message { font-size: 1.4rem; }
+            .rose { font-size: 8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>For My Dearest Phyo</h1>
+            
+            <div class="message">
+                To my dearest Phyo,<br>
+                You make every moment magical.
+            </div>
+            
+            <div class="rose-container">
+                <div class="rose">🌹</div>
+                <div class="petals" id="petals"></div>
+            </div>
+            
+            <div class="signature">With all my love</div>
+            
+            <div class="footer">
+                Made with ❤️ for the most special person
+            </div>
+        </div>
+    </div>
+    
+    <div class="bubbles" id="bubbles"></div>
+    
+    <script>
+        // Create falling petals
+        const petalsContainer = document.getElementById('petals');
+        for (let i = 0; i < 25; i++) {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.style.left = `${Math.random() * 100}%`;
+            petal.style.width = `${15 + Math.random() * 25}px`;
+            petal.style.height = petal.style.width;
+            petal.style.animationDuration = `${5 + Math.random() * 10}s`;
+            petal.style.animationDelay = `${Math.random() * 5}s`;
+            petalsContainer.appendChild(petal);
+        }
+        
+        // Create floating hearts
+        for (let i = 0; i < 15; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.top = `${Math.random() * 100}%`;
+            heart.style.animationDelay = `${Math.random() * 2}s`;
+            heart.style.fontSize = `${1 + Math.random() * 2}rem`;
+            document.body.appendChild(heart);
+        }
+        
+        // Create bubbles
+        const bubblesContainer = document.getElementById('bubbles');
+        for (let i = 0; i < 20; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = `${Math.random() * 100}%`;
+            bubble.style.animationDuration = `${10 + Math.random() * 20}s`;
+            bubble.style.animationDelay = `${Math.random() * 10}s`;
+            bubble.style.width = `${20 + Math.random() * 30}px`;
+            bubble.style.height = bubble.style.width;
+            bubblesContainer.appendChild(bubble);
+        }
+        
+        // Add rose animation effect
+        const rose = document.querySelector('.rose');
+        setInterval(() => {
+            rose.style.fontSize = `${90 + Math.random() * 20}px`;
+        }, 3000);
+    </script>
+</body>
+</html>
